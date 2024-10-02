@@ -5,6 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>Devops</groupId>
+<<<<<<< HEAD
   <artifactId>webapp2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -30,6 +31,33 @@
 
   <build>
     <finalName>webapp2</finalName>
+=======
+  <artifactId>webapp1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>webapp1 Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>webapp1</finalName>
+>>>>>>> branch 'main' of https://github.com/HUSSAIN-MOHAMMAD-BUDA/Eclipse.git
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
