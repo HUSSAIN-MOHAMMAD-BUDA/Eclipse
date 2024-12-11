@@ -6,6 +6,7 @@
 <h1><%= "Hello World!" %></h1>
 <h1><%= "Hell World!" %></h1>
 <h1><%= "Y21ACS510" %></h1>
+
 <!--
 
 7)Docker CMD  
@@ -202,5 +203,6 @@ ansioble-playbook /home/ansadmin/deploy_hello_world.yml
 
 
 -->
+<h1>nagu</h1>
 </body>
 </html>
