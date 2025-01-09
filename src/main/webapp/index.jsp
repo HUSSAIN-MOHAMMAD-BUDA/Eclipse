@@ -91,7 +91,92 @@
 
 
 <%--
-j
+
+
+1. Install git 
+sudo yum install git 
+
+2. Install jdk -17 
+// search for java 17 Ec2 
+sudo yum install java-17-amazon-corretto-devel 
+
+// Set Environment variables 
+in .bashrc of ec2-user and root 
+export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto 
+source .bashrc 
+
+3. Install Tomcat 
+sudo su  
+wget the tar.gz archive  in /opt 
+// Search for Apache tomcat 9 tar 
+
+wget  https://dlcdn.apache.org/tomcat/tomcat
+9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz 
+
+tar -xvzf apache-tomcat-9.0.01.tar.az 
+mv apache-tomcat-9.0.01  tomcat 
+ln -s /opt/tomcat/bin startup.sh /usr/bin/tomcat-start 
+ln -s /opt/tomcat/bin shutdown.sh /usr/bin/tomcat-stop 
+Search for context.xml in tomcat.  
+In ../manager/../context.xml and  in ../manager/../context.xml 
+comment the following 
+<Context> 
+<!— 
+… 
+<Valve 
+className="org.apache.catalina.valves.RemoteAddrValve"  
+allow="127\.\d+\.\d+\.\d+|::1"  deny=""/>  
+… --> 
+</Context> 
+In conf/tocat-users.xml 
+<role rolename=”manager-gui”/> 
+<role rolename=”manager-script”/> 
+<user username=”admin” password="tomcat” roles =”manager-gui”/> 
+<user username=”admin” password="tomcat” roles =”manager
+script”/> 
+Test the Tomcat installation with http://<publicip>:8080 
+
+
+4. Install maven 
+sudo su 
+Get the maven repository into /opt 
+
+wget https://dlcdn.apache.org/maven/maven
+3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz 
+
+tar -zxvf apache-maven-3.9.8-bin.tar.gz 
+
+mv apache-maven-3.9.8 maven 
+check maven version /opt/maven/bin/mvn -v 
+
+In .bashrc of ex2-user and root 
+
+export M2_HOME=/opt/maven 
+export M2=/opt/maven/bin
+export PATH=$PATH:$M2 
+
+source .bashrc 
+create a application directory 
+
+mvn archetype:generate -DgroupId=com.example 
+DartifactId=sample-webapp -DarchetypeArtifactId=maven
+archetype-webapp -DinteractiveMode=false
+
+cd sample-webapp 
+Build it 
+mvn package 
+sudo su 
+
+cp ./target/sample-webapp.war /opt/tomcat/webapps 
+
+Test it from http://<publicip>:8080/sample-webapp
+
+
+
+
+
+
+
 
 7)Docker CMD  
 --------------------
