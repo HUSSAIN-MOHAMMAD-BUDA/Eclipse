@@ -174,6 +174,27 @@ Test it from http://<publicip>:8080/sample-webapp
 
 
 
+FOR JENKINS ------------------->
+->sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+->sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+->yum install jenkins -y
+->service jenkins start
+->copy path in browser and paste it cmd using cat
+->cat path in browser
+->in ssh server 
+->name --tomcat
+->target/*.war
+->target/
+->//opt//tomcat//webapps
+------>IN TOMCAT SERVER<----
+start tomcat
+->usermod -aG root ec2-user
+->chmod -R g+w /opt/tomcat/webapps/
+
+
+
+
+
 
 
 
